@@ -20,7 +20,9 @@ namespace Order.Domain.Entities
         }
         public Order(OrderModel orderModel) 
         {
-
+            UserName = orderModel.UserName;
+            TotalPrice = orderModel.TotalPrice;
+            OrderItems = orderModel.OrderItems?.Select(x => new OrderItem(x)).ToList();
         }
 
         public override OrderModel MapToModel()

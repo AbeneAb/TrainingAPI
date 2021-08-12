@@ -14,6 +14,7 @@ namespace Order.Domain.Seed
         Task DeleteAsync(T entity);
         Task<T> GetByIdAsync(Guid id);
         Task<IReadOnlyList<T>> GetAllAsync();
-        Task<IQueryable<T>> GetQueryAsync(Expression<Func<T, bool>> predicate);
+        Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate);
+        IQueryable<T> GetQueryAsync(Expression<Func<T, bool>> predicate);
     }
 }

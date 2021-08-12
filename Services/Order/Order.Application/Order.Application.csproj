@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\" />
+    <ProjectReference Include="..\Order.Domain\Order.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -30,7 +30,7 @@ namespace Order.Application.Features
 
         public async Task<List<Domain.Entities.Order>> GetByUser(string user)
         {
-            var data = _orderRepository.GetQueryAsync(x => x.UserName == user);
+            var data = _orderRepository.GetAsync(x => x.UserName == user);
             List<Domain.Entities.Order> orders = (await data).Select(x=> new Domain.Entities.Order(x)).ToList();
             return orders;
         }
