@@ -12,5 +12,12 @@ namespace Order.Domain.Models
         public decimal Qty { get; protected set; }
         public string Name { get; protected set; }
         public decimal Price { get; protected set; }
+        public OrderItemModel(decimal qty, string name, decimal price)
+        {
+            Price = price;
+            Qty = qty;
+            Name = name;
+
+        }
     }
 }

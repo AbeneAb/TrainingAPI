@@ -18,10 +18,18 @@ namespace Order.Domain.Entities
         {
             OrderItems = new List<OrderItem>();
         }
+        public Order(OrderModel orderModel) 
+        {
+
+        }
 
         public override OrderModel MapToModel()
         {
-            throw new NotImplementedException();
+            OrderModel orderModel = new OrderModel();
+            orderModel.UserName = UserName;
+            orderModel.TotalPrice = TotalPrice;
+            orderModel.OrderItems = OrderItems?.Select(x => x.MapToModel()).ToList();
+            return orderModel;
         }
 
         public override OrderModel MapToModel(OrderModel t)
