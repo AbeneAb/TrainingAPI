@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  orderdb:
+    image: postgres
+
+  pgadmin:
+    image: dpage/pgadmin4
+
+  order.api:
+    image: ${DOCKER_REGISTRY-}orderapi
+    build:
+      context: .
+      dockerfile: Services/Order/Order.API/Dockerfile
+
+volumes:
+  orderdb_data:
+  pgadmin_data:
+  postgres_data:
+

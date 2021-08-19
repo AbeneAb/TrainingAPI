@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31313.79
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{12F2600C-8097-4FF8-9539-AF994F52BBF6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OrderAPI", "OrderAPI", "{A6B82C16-B9D0-44D5-9811-1985C8CB200A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CatalogAPI", "CatalogAPI", "{C7F1DD1C-CE6C-4185-A210-08F6CB83598A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.Domain", "Services\Order\Order.Domain\Order.Domain.csproj", "{F309E64B-9E45-4CB8-BB6C-37529B3A2016}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.Application", "Services\Order\Order.Application\Order.Application.csproj", "{52521D06-8457-432C-ADC8-F2A69C50A300}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.Infrastructure", "Services\Order\Order.Infrastructure\Order.Infrastructure.csproj", "{5957AECD-4B1B-4B19-8638-943405B0701C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.API", "Services\Order\Order.API\Order.API.csproj", "{5723DE23-B955-4EDB-A370-CC567390A596}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4B603C0C-65FB-4886-B3E9-D952B2622E2E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F309E64B-9E45-4CB8-BB6C-37529B3A2016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F309E64B-9E45-4CB8-BB6C-37529B3A2016}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F309E64B-9E45-4CB8-BB6C-37529B3A2016}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F309E64B-9E45-4CB8-BB6C-37529B3A2016}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52521D06-8457-432C-ADC8-F2A69C50A300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52521D06-8457-432C-ADC8-F2A69C50A300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52521D06-8457-432C-ADC8-F2A69C50A300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52521D06-8457-432C-ADC8-F2A69C50A300}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5957AECD-4B1B-4B19-8638-943405B0701C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5957AECD-4B1B-4B19-8638-943405B0701C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5957AECD-4B1B-4B19-8638-943405B0701C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5957AECD-4B1B-4B19-8638-943405B0701C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5723DE23-B955-4EDB-A370-CC567390A596}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5723DE23-B955-4EDB-A370-CC567390A596}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5723DE23-B955-4EDB-A370-CC567390A596}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5723DE23-B955-4EDB-A370-CC567390A596}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B603C0C-65FB-4886-B3E9-D952B2622E2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B603C0C-65FB-4886-B3E9-D952B2622E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B603C0C-65FB-4886-B3E9-D952B2622E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B603C0C-65FB-4886-B3E9-D952B2622E2E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A6B82C16-B9D0-44D5-9811-1985C8CB200A} = {12F2600C-8097-4FF8-9539-AF994F52BBF6}
+		{C7F1DD1C-CE6C-4185-A210-08F6CB83598A} = {12F2600C-8097-4FF8-9539-AF994F52BBF6}
+		{F309E64B-9E45-4CB8-BB6C-37529B3A2016} = {A6B82C16-B9D0-44D5-9811-1985C8CB200A}
+		{52521D06-8457-432C-ADC8-F2A69C50A300} = {A6B82C16-B9D0-44D5-9811-1985C8CB200A}
+		{5957AECD-4B1B-4B19-8638-943405B0701C} = {A6B82C16-B9D0-44D5-9811-1985C8CB200A}
+		{5723DE23-B955-4EDB-A370-CC567390A596} = {A6B82C16-B9D0-44D5-9811-1985C8CB200A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CBD05CFB-746D-45F0-B23A-4587AC49263D}
+	EndGlobalSection
+EndGlobal
