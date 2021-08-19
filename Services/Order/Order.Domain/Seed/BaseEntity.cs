@@ -13,5 +13,15 @@ namespace Order.Domain.Seed
         public DateTime CreatedDate { get; protected set; }
         public abstract T MapToModel();
         public abstract T MapToModel(T t);
+        public BaseEntity(T auditModel)
+        {
+            Id = auditModel.Id;
+            CreatedDate = auditModel.CreatedDate;
+            IsActive = auditModel.IsActive;
+        }
+        public BaseEntity()
+        {
+
+        }
     }
 }

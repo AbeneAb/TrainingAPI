@@ -13,5 +13,7 @@ namespace Order.Domain.Interfaces.Facade
         Task<List<Entities.Order>> GetByUser(string user);
         Task<Entities.Order> GetOrder(Guid id);
         Task UpdateOrder(Entities.Order order);
+        Task DeleteOrder(Guid id);
+
     }
 }

@@ -8,7 +8,7 @@ namespace Order.Domain.Seed
 {
     public abstract class BaseAuditModel
     {
-        public Guid Guid { get; protected set; }
+        public Guid Id { get; protected set; }
         public bool IsActive { get;  set; }
         public DateTime CreatedDate { get;  set; }
         public Guid CreatedByUser { get;  set; }

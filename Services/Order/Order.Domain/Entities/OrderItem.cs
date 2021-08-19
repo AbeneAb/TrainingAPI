@@ -11,7 +11,7 @@ namespace Order.Domain.Entities
     public class OrderItem : BaseEntity<OrderItemModel>
     {
 
-        public OrderItem(OrderItemModel model)
+        public OrderItem(OrderItemModel model):base(model)
         {
             Qty = model.Qty;
             Name = model.Name;
