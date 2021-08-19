@@ -18,7 +18,7 @@ namespace Order.Domain.Entities
         {
             OrderItems = new List<OrderItem>();
         }
-        public Order(OrderModel orderModel) 
+        public Order(OrderModel orderModel) :base(orderModel)
         {
             UserName = orderModel.UserName;
             TotalPrice = orderModel.TotalPrice;

@@ -1,4 +1,5 @@
-﻿using Order.Domain.Interfaces.Facade;
+﻿using Order.Application.Exceptions;
+using Order.Domain.Interfaces.Facade;
 using Order.Domain.Interfaces.Repository;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,17 @@ namespace Order.Application.Features
         {
             Order.Domain.Models.OrderModel orderModel = order.MapToModel();
             await _orderRepository.AddAsync(orderModel);
-            return orderModel.Guid;
+            return orderModel.Id;
+        }
+
+        public async Task DeleteOrder(Guid id)
+        {
+            var orderToDelete = await _orderRepository.GetByIdAsync(id);
+            if(orderToDelete == null) 
+            {
+                throw new NotFoundException(nameof(Domain.Entities.Order), id);
+            }
+            await _orderRepository.DeleteAsync(orderToDelete);
         }
 
         public async Task<List<Domain.Entities.Order>> GetAllOrders()
@@ -35,14 +46,21 @@ namespace Order.Application.Features
             return orders;
         }
 
-        public Task<Domain.Entities.Order> GetOrder(Guid id)
+        public async Task<Domain.Entities.Order> GetOrder(Guid id)
         {
-            throw new NotImplementedException();
+            var data = _orderRepository.GetByIdAsync(id);
+            return new Domain.Entities.Order((await data));
         }
 
-        public Task UpdateOrder(Domain.Entities.Order order)
+        public async Task UpdateOrder(Domain.Entities.Order order)
         {
-            throw new NotImplementedException();
+            var orderToUpdate = await _orderRepository.GetByIdAsync(order.Id);
+            if(orderToUpdate == null) 
+            {
+                throw new NotFoundException(nameof(Domain.Entities.Order), order.Id);
+            }
+            var newOrder = order.MapToModel(orderToUpdate);
+            await _orderRepository.UpdateAsync(newOrder);
         }
     }
 }
